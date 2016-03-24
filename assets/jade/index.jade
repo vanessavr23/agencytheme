@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+html
+	head
+		meta(charset="UTF-8")
+		title Agency Theme
+		link(rel="stylesheet", href="assets/css/bootstrap.css")
+		link(rel="stylesheet", href="assets/font-awesome/css/font-awesome.min.css")
+		link(rel="stylesheet", href="assets/sass/main.css")
+		
+	body
+		- var texto1 = "Lorem ipsum dolor sit amet consectur."
+		- var texto2 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+		mixin boton
+			button.boton TELL ME MORE
+			nav.navbar.navbar-default.navbar-fixed-top
+				.container
+					.navbar-header.page-scroll
+						button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						a.navbar-brand.page-scroll(href="#page-top") Star Bootstrap
+					.collapse.navbar-collapse#bs-example-navbar-collapse-1
+						ul.nav.navbar-nav.navbar-right
+							li.hidden.active
+								a(href="#")
+							li
+								a.page-scroll(href="#services") SERVICES
+							li
+								a.page-scroll(href="#portfolio") PORTFOLIO
+							li
+								a.page-scroll(href="#about") ABOUT
+							li
+								a.page-scroll(href="#team") TEAM
+							li
+								a.page-scroll(href="#contact") CONTACT
+		header
+			.container
+				.welcome.text-center
+					p.welcome1 welcome To Our Studio!
+					p.grande ITS NICE TO MEET YOU
+					+boton
+		section#services
+			.container.text-center
+				h2 SERVICES 
+				p.italica #{texto1}
+				.row
+					.col-md-4
+						span.fa-stack.fa-4x
+							i.fa.fa-circle.fa-stack-2x
+							i.fa.fa-shopping-cart.fa-stack-1x
+						h4 E-Commerce
+						p #{texto2}
+
+					.col-md-4
+						span.fa-stack.fa-4x
+							i.fa.fa-circle.fa-stack-2x
+							i.fa.fa-laptop.fa-stack-1x
+						h4 Responsive Design 
+						p #{texto2}
+						
+					.col-md-4
+						span.fa-stack.fa-4x
+							i.fa.fa-circle.fa-stack-2x
+							i.fa.fa-lock.fa-stack-1x
+						h4 Web Security
+						p #{texto2} 		
+			
+		section#portfolio
+			.container.text-center
+				h2 PORTFOLIO 
+				p.italica #{texto1}
+				.row
+					.col-md-4.text-center
+						img(src="img/portfolio/roundicons.png", alt="")
+						.caja
+							h4 Round Icons 
+							p.italica Graphic Design	
+
+					.col-md-4.text-center
+						img(src="img/portfolio/startup-framework.png", alt="")
+						.caja
+							h4 Round Icons 
+							p.italica Graphic Design
+
+					.col-md-4.text-center
+						img(src="img/portfolio/treehouse.png", alt="")
+						.caja
+							h4 Round Icons 
+							p.italica Graphic Design
+				.row
+					.col-md-4.text-center
+						img(src="img/portfolio/golden.png", alt="")
+						.caja
+							h4 Round Icons 
+							p.italica Graphic Design	
+
+					.col-md-4.text-center
+						img(src="img/portfolio/escape.png", alt="")
+						.caja
+							h4 Round Icons 
+							p.italica Graphic Design
+
+					.col-md-4.text-center
+						img(src="img/portfolio/dreams.png", alt="")
+						.caja
+							h4 Round Icons 
+							p.italica Graphic Design
+
+		section#about
+			.container.text-center
+				h2 ABOUT
+				p.italica #{texto1}
+
+				.row
+					.col-lg-12
+						ul
+							li
+								.timeline-image
+									img.img-circle.img-responsive(src="img/about/1.jpg", alt="")
+								.timeline-panel
+									.timeline-heading
+										h4 2009-2011
+										h4.subheading Our Humble Beginnings
+									.timeline-body
+										p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+
+							li.timeline-inverted
+								.timeline-image
+									img.img-circle.img-responsive(src="img/about/2.jpg", alt="")
+								.timeline-panel
+									.timeline-heading
+										h4 March 2011
+										h4.subheading An Agency is Born
+									.timeline-body
+										p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+
+							li
+								.timeline-image
+									img.img-circle.img-responsive(src="img/about/3.jpg", alt="")
+								.timeline-panel
+									.timeline-heading
+										h4 December 2012
+										h4.subheading Transition to Full Service
+									.timeline-body
+										p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+
+							li.timeline-inverted
+								.timeline-image
+									img.img-circle.img-responsive(src="img/about/4.jpg", alt="")
+								.timeline-panel
+									.timeline-heading
+										h4 July 2014
+										h4.subheading Phase Two Expansion
+									.timeline-body
+										p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+
+							li.timeline-inverted
+								h4 BE PART	<br> OF OUR <br> STORY!
+
+		section#team
+			.container.text-center
+				h2 PORTFOLIO 
+				p.italica #{texto1}
+				.row
+					.col-md-4
+						.team-foto
+							img.img-circle.img-responsive(src="img/team/1.jpg", alt="")		
+							h4 Kay Garland
+							p.text-muted Lead Designer
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-twitter.fa-stack-1x
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-facebook.fa-stack-1x
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-linkedin.fa-stack-1x
+
+					.col-md-4
+						.team-foto
+							img.img-circle.img-responsive(src="img/team/2.jpg", alt="")		
+							h4 Kay Garland
+							p.text-muted Lead Designer
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-twitter.fa-stack-1x
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-facebook.fa-stack-1x
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-linkedin.fa-stack-1x
+							
+					.col-md-4
+						.team-foto
+							img.img-circle.img-responsive(src="img/team/3.jpg", alt="")		
+							h4 Kay Garland
+							p.text-muted Lead Designer
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-twitter.fa-stack-1x
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-facebook.fa-stack-1x
+							span.fa-stack.fa-lg
+								i.fa.fa-circle.fa-stack-2x
+								i.fa.fa-linkedin.fa-stack-1x
+				.row
+					.col-md-12
+						p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+
+		section#logos
+			.container.text-center
+				.row
+					.col-md-3
+						a(href="#")
+							img(src="img/logos/envato.jpg", alt="")
+					.col-md-3
+						a(href="#")
+							img(src="img/logos/designmodo.jpg", alt="")
+					.col-md-3
+						a(href="#")
+							img(src="img/logos/themeforest.jpg", alt="")
+					.col-md-3
+						a(href="#")
+							img(src="img/logos/creative-market.jpg", alt="")
+
+		section#contact							
+			.container.text-center
+				h2 CONTACT US 
+				p.italica #{texto1}
+				.row
+					.col-md-6
+						.form-group
+							input.form-control(type="text", placeholder="YOUR NAME *")
+						.form-group
+							input.form-control(type="email", placeholder="YOUR EMAIL *")
+						.form-group
+							input.form-control(type="tel", placeholder="YOUR PHONE *")
+					.col-md-6
+						.form-group
+							textarea.form-control(placeholder="YOUR MESSAGE")
+				+boton
+		
+		footer.container
+			.row
+				.col-md-4
+					span.copy Copyright © Your Website 2014
+				.col-md-4
+					span.fa-stack.fa-lg
+						i.fa.fa-circle.fa-stack-2x
+						i.fa.fa-twitter.fa-stack-1x
+					span.fa-stack.fa-lg
+						i.fa.fa-circle.fa-stack-2x
+						i.fa.fa-facebook.fa-stack-1x
+					span.fa-stack.fa-lg
+						i.fa.fa-circle.fa-stack-2x
+						i.fa.fa-linkedin.fa-stack-1x
+				.col-md-4
+					span Privacy Policy
+					span Terms of Use
+		script(type="text/javascript" src="./assets/js/jquery.js")
+		script(type="text/javascript" src="./assets/js/agency.js")
+		script(type="text/javascript" src="./assets/js/bootstrap.js")
+		script(type="text/javascript" src="./assets/js/cbpAnimatedHearder.js")
+		script(type="text/javascript" src="./assets/js/classie.js")
+		script(type="text/javascript" src="./assets/js/contact_me.js")
+		script(type="text/javascript" src="./assets/js/jqBootstrapValidation.js")
