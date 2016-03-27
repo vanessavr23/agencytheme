@@ -1,6 +1,10 @@
 $naranja: #fed136;
 $blanco: #fff;
 $plomo: #777;
+$gris: #f7f7f7;
+$montserrat: Montserrat,"Helvetica Neue";
+$droid: "Droid Serif", "Helvetica Neue";
+
 
 @mixin espacio(){
 	padding: 10% 0;
@@ -10,18 +14,20 @@ $plomo: #777;
 	font-size: 40px;
 	margin-top: 0;
 	margin-bottom: 15px;
-	font-family: "Montserrat","Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: $montserrat;
 	font-weight: 700;
 }
 
 @mixin italica(){
 	font-size: 16px;
 	color: $plomo;
-	font-family: "Droid Serif" "Helvetica Neue";
+	font-family: $droid;
+	font-weight:400;
+	margin-bottom:75px;
 	text-transform: none;
 	font-style: italic;
 	font-weight: 400;
-}
+	}
 
 @mixin caja(){
 	background-color: $blanco;
@@ -29,22 +35,20 @@ $plomo: #777;
 	padding: 10px 0;
 }
 
-@media (min-width: 768px) {
-	.navbar-default{
-		background-color: transparent;
-		padding: 25px 0;
-		transition: padding 0.3s;
-		border: none;
-		.navbar-shrink{
-		background-color: #222222;
-		}
-	}
+h4{
+	font-family:$montserrat;
+	font-weight:700;
+}
+
+body{
+	overflow-x:hidden;
+	font-family:"Roboto Slab";
 }
 
 .navbar-default{
 	background-color: transparent;
 	border-color: transparent;
-
+	padding: 10px 0;
 	.navbar-toggle{
 		background-color: $naranja;
 		border-color: $naranja; 
@@ -55,8 +59,9 @@ $plomo: #777;
 	.navbar-header{
 		a{
 			color: $naranja;
-			font-family: "kaushan Script", "Helvetica Neue", Helvetica, cursive;
-			font-size: 26px;
+			font-family: "kaushan Script", Helvetica, cursive;
+			font-weight: 400;
+			font-size: 28px;
 		}
 	}
 	.navbar-collapse{
@@ -64,7 +69,9 @@ $plomo: #777;
 			li{
 				a{
 					color: $blanco;
-					font-weight: 700;
+					font-weight: 400;
+					font-family: $montserrat;
+					letter-spacing: 1px;
 				}
 				a:hover{
 					color: $naranja;
@@ -74,31 +81,47 @@ $plomo: #777;
 	}
 }
 
+.navbar-shrink{
+	background-color: #222;
+	padding:10px 0;
+}
+
 header{
 	background-image: url(../../img/header-bg.jpg);
 	background-repeat: none;
 	background-size: cover;
-	background-position: 0 -60px;
+	background-attachment:scroll;
+	background-position: center;
 	width: 100%;
 	.welcome{
 		padding: 25% 10% 19% 10%;
 		color: $blanco;
 		.welcome1{
 			font-size: 40px;
+			font-family: $droid;
+			font-style: italic;
 		}
 		.grande{
 			font-size: 75px;
+			font-family: $montserrat;
+			font-weight: 700;
 		}
 	}
 }
 
 .boton{
 	background-color: $naranja;
+	color:$blanco;
+	font-family:$montserrat;
+	font-weight:700;
 	padding: 20px 40px;
 	font-size: 20px;
 	border: none;
 	border-radius: 5px;
 	margin-top: 10px;
+}
+.boton:hover{
+	color: $plomo;
 }
 
 #services{
@@ -117,6 +140,9 @@ header{
 			.fa-stack-1x{
 				color:$blanco;
 			}
+			.fa-stack-1x:hover{
+				color: $plomo;
+			}
 			p{
 				color: $plomo;
 			}
@@ -133,6 +159,11 @@ header{
 		}
 		.italica{
 			@include italica;
+		}
+		.italica1{
+			@include italica;
+			margin-bottom: 0px;
+
 		}
 		.row{
 			.col-md-4{
@@ -157,42 +188,130 @@ header{
 		.italica{
 			@include italica;
 		}
-		ul{
-			list-style: none;
-			padding: 0;
-			position: relative;
-			li{
-				.timeline-image{
-					width: 170px;
-					height: 170px;
-					margin-left: -85px;
+		.linea{
+			height: 1100px;
+			width: 1px;
+			border: 1px solid $gris;
+			position:absolute;
+			left: 50%;
+		}
+		.row{
+			margin:80px 0 0 0;
+			img{
+				border: 7px solid $gris;
+			}
+			.circulo{
+				border-radius: 50%;
+				border: 7px solid $gris;
+				background-color: $naranja;
+				color: $blanco;
+				height: 160px;
+				width: 160px;
+				h4{
+					padding:40px 0;
 				}
-				.timeline-panel{
-					padding: 0 20px 20px 100px;
-					width: 41%;
-					float: left;
-					text-align: right;
-					.timeline-heading{
-						h4{
-							margin-top: 0;
-							color: inherit;
-						}
+			}
+			.circulo:hover{
+				color: $plomo;
+			}
+		}
+	}
+}
+
+#team{
+	background-color: #F7F7F7;
+	.container{
+		@include espacio;
+		h2{
+			@include h-2;
+		}
+		.italica{
+			@include italica;
+		}
+		.italica1{
+			@include italica;
+			margin-bottom: 0px;
+		}
+		.row{
+			.col-md-4{
+				img{
+					margin:auto;
+					border: 8px solid $blanco;
+				}
+				.fa-lg{
+					margin: 0 5px;
+					.fa-stack-1x{
+						color:$blanco;
+					}
+					.fa-stack-1x:hover{
+						color: $naranja;
 					}
 				}
 			}
-			.time-inverted{
-				min-height: 170px;
-				.timeline-image{
-					width: 170px;
-					height: 170px;
-					margin-left: -85px;
-				}
-				.timeline-panel{
-					padding: 0 100px 20px 20px;
+		}
+		.row{
+			.col-md-12{
+				padding:3% 18%;
+				p{
+					font-size: 16px;
+					line-height: 170%;
 				}
 			}
 		}
 	}
-}	
+}
 
+#logos{
+	padding: 4% 0;
+}
 
+#contact{
+	background-color:#222;
+	background-image:url(../../img/map-image.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	.container{
+		@include espacio;
+		h2{
+			@include h-2;
+			color: $blanco;
+		}
+		.italica{
+			@include italica;
+		}
+		.form-group{
+			margin-bottom: 20px;
+			.form-control{
+				padding:30px 20px;
+				font-family: $montserrat;
+				font-weight: 700;
+			}
+			textarea{
+				height: 226px;
+			}
+		}
+	}
+}
+
+footer{
+	padding:20px 0;
+	.col-md-4{
+		span{
+			font-family: $montserrat;
+			display: inline-block;
+			.fa-stack-1x{
+				color: $blanco;
+			}
+			.fa-stack-1x:hover{
+				color: $naranja;
+			}
+			p{
+				padding:10px 10px 0 10px ;
+			}
+			.nara{
+				color: $naranja;
+				float: left;
+			}
+		}
+	}
+}

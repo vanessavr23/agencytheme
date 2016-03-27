@@ -2,17 +2,36 @@
 html
 	head
 		meta(charset="UTF-8")
+		meta(name='viewport', content='width=device-width, initial-scale=1')
 		title Agency Theme
 		link(rel="stylesheet", href="assets/css/bootstrap.css")
+		link(href='assets/css/bootstrap.min.css', rel='stylesheet')
+		link(href='assets/css/agency.css', rel='stylesheet')
 		link(rel="stylesheet", href="assets/font-awesome/css/font-awesome.min.css")
+		link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Kaushan+Script', rel='stylesheet', type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700', rel='stylesheet', type='text/css')
 		link(rel="stylesheet", href="assets/sass/main.css")
-		
+
 	body
-		- var texto1 = "Lorem ipsum dolor sit amet consectur."
+		- var texto1 = "Lorem ipsum dolor sit amet consectetur."
 		- var texto2 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-		mixin boton
-			button.boton TELL ME MORE
-			nav.navbar.navbar-default.navbar-fixed-top
+		-var texto3 =  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+		mixin boton(name)
+			button.boton= name
+		mixin icono
+			span.fa-stack.fa-lg
+				i.fa.fa-circle.fa-stack-2x
+				i.fa.fa-twitter.fa-stack-1x
+			span.fa-stack.fa-lg
+				i.fa.fa-circle.fa-stack-2x
+				i.fa.fa-facebook.fa-stack-1x
+			span.fa-stack.fa-lg
+				i.fa.fa-circle.fa-stack-2x
+				i.fa.fa-linkedin.fa-stack-1x
+
+		nav.navbar.navbar-default.navbar-fixed-top
 				.container
 					.navbar-header.page-scroll
 						button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
@@ -20,7 +39,7 @@ html
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-						a.navbar-brand.page-scroll(href="#page-top") Star Bootstrap
+						a.navbar-brand.page-scroll Star Bootstrap
 					.collapse.navbar-collapse#bs-example-navbar-collapse-1
 						ul.nav.navbar-nav.navbar-right
 							li.hidden.active
@@ -38,9 +57,9 @@ html
 		header
 			.container
 				.welcome.text-center
-					p.welcome1 welcome To Our Studio!
+					p.welcome1 Welcome To Our Studio!
 					p.grande ITS NICE TO MEET YOU
-					+boton
+					+boton('TELL ME MORE')
 		section#services
 			.container.text-center
 				h2 SERVICES 
@@ -66,102 +85,89 @@ html
 							i.fa.fa-lock.fa-stack-1x
 						h4 Web Security
 						p #{texto2} 		
-			
 		section#portfolio
 			.container.text-center
 				h2 PORTFOLIO 
 				p.italica #{texto1}
 				.row
 					.col-md-4.text-center
-						img(src="img/portfolio/roundicons.png", alt="")
+						.pic
+							img(src="img/portfolio/roundicons.png", alt="")
 						.caja
 							h4 Round Icons 
-							p.italica Graphic Design	
-
+							p.italica1 Graphic Design
 					.col-md-4.text-center
 						img(src="img/portfolio/startup-framework.png", alt="")
 						.caja
-							h4 Round Icons 
-							p.italica Graphic Design
-
+							h4 Startup Framework
+							p.italica1 Graphic Design
 					.col-md-4.text-center
 						img(src="img/portfolio/treehouse.png", alt="")
 						.caja
-							h4 Round Icons 
-							p.italica Graphic Design
+							h4 Treehouse
+							p.italica1 Graphic Design
 				.row
 					.col-md-4.text-center
 						img(src="img/portfolio/golden.png", alt="")
 						.caja
-							h4 Round Icons 
-							p.italica Graphic Design	
-
+							h4 Golden
+							p.italica1 Graphic Design
 					.col-md-4.text-center
 						img(src="img/portfolio/escape.png", alt="")
 						.caja
-							h4 Round Icons 
-							p.italica Graphic Design
-
+							h4 Escape
+							p.italica1 Graphic Design
 					.col-md-4.text-center
 						img(src="img/portfolio/dreams.png", alt="")
 						.caja
-							h4 Round Icons 
-							p.italica Graphic Design
-
+							h4 Dreams 
+							p.italica1 Graphic Design
 		section#about
 			.container.text-center
 				h2 ABOUT
 				p.italica #{texto1}
-
+				.linea
 				.row
-					.col-lg-12
-						ul
-							li
-								.timeline-image
-									img.img-circle.img-responsive(src="img/about/1.jpg", alt="")
-								.timeline-panel
-									.timeline-heading
-										h4 2009-2011
-										h4.subheading Our Humble Beginnings
-									.timeline-body
-										p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-
-							li.timeline-inverted
-								.timeline-image
-									img.img-circle.img-responsive(src="img/about/2.jpg", alt="")
-								.timeline-panel
-									.timeline-heading
-										h4 March 2011
-										h4.subheading An Agency is Born
-									.timeline-body
-										p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-
-							li
-								.timeline-image
-									img.img-circle.img-responsive(src="img/about/3.jpg", alt="")
-								.timeline-panel
-									.timeline-heading
-										h4 December 2012
-										h4.subheading Transition to Full Service
-									.timeline-body
-										p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-
-							li.timeline-inverted
-								.timeline-image
-									img.img-circle.img-responsive(src="img/about/4.jpg", alt="")
-								.timeline-panel
-									.timeline-heading
-										h4 July 2014
-										h4.subheading Phase Two Expansion
-									.timeline-body
-										p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-
-							li.timeline-inverted
-								h4 BE PART	<br> OF OUR <br> STORY!
+					.col-md-1
+					.col-md-4.text-right
+						h4 2009-2011
+						h4.subheading Our Humble Beginnings
+						p.text-muted #{texto3}
+					.col-md-2
+						img.img-circle.img-responsive(src="img/about/1.jpg")
+				.row
+					.col-md-5
+					.col-md-2
+						img.img-circle.img-responsive(src="img/about/2.jpg")
+					.col-md-4.text-left
+						h4 March 2011
+						h4.subheading An Agency is Born
+						p.text-muted #{texto3}
+				.row
+					.col-md-1
+					.col-md-4.text-right
+						h4 December 2012
+						h4.subheading Transition to Full Service
+						p.text-muted #{texto3}
+					.col-md-2
+						img.img-circle.img-responsive(src="img/about/3.jpg")
+				.row
+					.col-md-5
+					.col-md-2
+						img.img-circle.img-responsive(src="img/about/4.jpg")
+					.col-md-4.text-left
+						h4 July 2014
+						h4.subheading Phase Two Expansion
+						p.text-muted #{texto3}
+				.row
+					.col-md-5
+					.col-md-2
+						.circulo.text-center
+							h4 BE PART <br> OF OUR <br> STORY!
 
 		section#team
 			.container.text-center
-				h2 PORTFOLIO 
+				h2 OUR AMAZING TEAM
 				p.italica #{texto1}
 				.row
 					.col-md-4
@@ -169,45 +175,21 @@ html
 							img.img-circle.img-responsive(src="img/team/1.jpg", alt="")		
 							h4 Kay Garland
 							p.text-muted Lead Designer
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-twitter.fa-stack-1x
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-facebook.fa-stack-1x
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-linkedin.fa-stack-1x
+							+icono
 
 					.col-md-4
 						.team-foto
 							img.img-circle.img-responsive(src="img/team/2.jpg", alt="")		
 							h4 Kay Garland
 							p.text-muted Lead Designer
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-twitter.fa-stack-1x
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-facebook.fa-stack-1x
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-linkedin.fa-stack-1x
+							+icono
 							
 					.col-md-4
 						.team-foto
 							img.img-circle.img-responsive(src="img/team/3.jpg", alt="")		
 							h4 Kay Garland
 							p.text-muted Lead Designer
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-twitter.fa-stack-1x
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-facebook.fa-stack-1x
-							span.fa-stack.fa-lg
-								i.fa.fa-circle.fa-stack-2x
-								i.fa.fa-linkedin.fa-stack-1x
+							+icono
 				.row
 					.col-md-12
 						p.text-muted Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
@@ -243,29 +225,26 @@ html
 					.col-md-6
 						.form-group
 							textarea.form-control(placeholder="YOUR MESSAGE")
-				+boton
+				+boton('SEND MESSAGE')
 		
 		footer.container
 			.row
-				.col-md-4
-					span.copy Copyright © Your Website 2014
-				.col-md-4
-					span.fa-stack.fa-lg
-						i.fa.fa-circle.fa-stack-2x
-						i.fa.fa-twitter.fa-stack-1x
-					span.fa-stack.fa-lg
-						i.fa.fa-circle.fa-stack-2x
-						i.fa.fa-facebook.fa-stack-1x
-					span.fa-stack.fa-lg
-						i.fa.fa-circle.fa-stack-2x
-						i.fa.fa-linkedin.fa-stack-1x
-				.col-md-4
-					span Privacy Policy
-					span Terms of Use
-		script(type="text/javascript" src="./assets/js/jquery.js")
-		script(type="text/javascript" src="./assets/js/agency.js")
-		script(type="text/javascript" src="./assets/js/bootstrap.js")
-		script(type="text/javascript" src="./assets/js/cbpAnimatedHearder.js")
-		script(type="text/javascript" src="./assets/js/classie.js")
-		script(type="text/javascript" src="./assets/js/contact_me.js")
-		script(type="text/javascript" src="./assets/js/jqBootstrapValidation.js")
+				.col-md-4.text-center
+					span 
+						p Copyright © Your Website 2014
+				.col-md-4.text-center
+					+icono
+				.col-md-4.text-center
+					span 
+						p.nara Privacy Policy
+					span 
+						p.nara Terms of Use
+		script(src='assets/js/jquery.js')
+		script(src='assets/js/agency.js')
+		script(src='assets/js/bootstrap.min.js')
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+		script(src="assets/js/bootstrap.js")
+		script(src='assets/js/cbpAnimatedHeader.js')
+		script(src='assets/js/classie.js')
+		script(src='assets/js/contact_me.js')
+		script(src='assets/js/jqBootstrapValidation.js')
